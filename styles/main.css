@@ -1,0 +1,213 @@
+:root {
+    /* New Inviting Palette - Modern Teal/Cyan */
+    --primary-color: #00897b; /* A warm, inviting teal */
+    --primary-dark: #005b4f;  /* Darker shade for contrast/hover */
+    --primary-light: #e0f2f1; /* Very light teal for accents */
+    
+    --bg-color: #f0f4f3; /* Slightly warmer light grey background */
+    --text-color: #2c3e50; /* Dark slate for softer text than pure black */
+    --white: #ffffff;
+    --border-color: #e1e8e6;
+    
+    /* Status Colors - Kept standard for clarity, tweaked slightly */
+    --status-ok-bg: #c8e6c9;
+    --status-ok-text: #256029;
+    --status-warn-bg: #fff3cd;
+    --status-warn-text: #856404;
+    --status-crit-bg: #ffcdd2;
+    --status-crit-text: #c62828;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header - Updated with gradient and modern feel */
+.app-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.app-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Controls Section - Card style */
+.controls-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 20px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.filter-group label {
+    font-weight: 600;
+    margin-right: 12px;
+    color: var(--primary-dark);
+}
+
+.filter-group select {
+    padding: 10px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.filter-group select:focus {
+    border-color: var(--primary-color);
+}
+
+.legend {
+    display: flex;
+    gap: 12px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Table Styling - Cleaner and more modern */
+.table-responsive {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; /* Required for border-radius on rows/headers */
+    border-spacing: 0;
+    min-width: 900px;
+}
+
+th, td {
+    padding: 16px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    /* Using light accent color for headers */
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Subtle hover effect on rows */
+tr:hover td {
+    background-color: #f8fcfb;
+}
+
+/* Make device name stand out */
+td strong {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+/* Action Button Styling */
+.btn-inspect {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-inspect:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-1px);
+}
+
+.btn-inspect:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+}
+
+/* Status Classes */
+.ok-status {
+    background-color: var(--status-ok-bg);
+    color: var(--status-ok-text);
+}
+
+.due-soon {
+    background-color: var(--status-warn-bg);
+    color: var(--status-warn-text);
+}
+
+.overdue {
+    background-color: var(--status-crit-bg);
+    color: var(--status-crit-text);
+    /* Add a subtle border to pop overdue items */
+    border: 2px solid rgba(198, 40, 40, 0.3); 
+    animation: pulse-red 2s infinite;
+}
+
+/* Footer */
+.app-footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 30px 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Animation Keyframes (unchanged but effective) */
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(220, 53, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}

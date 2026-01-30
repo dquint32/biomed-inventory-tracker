@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Med Inventory Tracker</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="container">
+            <h1>Bio-Med Inventory Tracker</h1>
+            <p>Clinical Engineering Asset Management</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="controls-section">
+            <div class="filter-group">
+                <label for="dept-filter">Filter by Department:</label>
+                <select id="dept-filter">
+                    <option value="all">All Departments</option>
+                    </select>
+            </div>
+            <div class="legend">
+                <span class="badge ok-status">OK</span>
+                <span class="badge due-soon">Due Soon (< 30 Days)</span>
+                <span class="badge overdue">Overdue</span>
+            </div>
+        </section>
+
+        <div class="table-responsive">
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Model</th>
+                        <th>Serial #</th>
+                        <th>Department</th>
+                        <th>Last Inspection</th>
+                        <th>Next Due</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>For demonstration only — not real hospital data.</p>
+        </div>
+    </footer>
+
+    <script src="data/devices.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
